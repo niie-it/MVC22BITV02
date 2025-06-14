@@ -1,2 +1,2 @@
 # MVC22BITV02
-Demo lớp 02
+Demo trên lớp lớp 22BITV02
