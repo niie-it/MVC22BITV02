@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Lab04.Models
 {
@@ -8,6 +9,7 @@ namespace Lab04.Models
 
 		[Display(Name = "Mã nhân viên")]
 		[RegularExpression("EMP[0-9]{4}", ErrorMessage = "Mã nhân viên có dạng EMPxxxx. Ví dụ: EMP0123")]
+		[Remote(controller:"Employee", action:"IsExistedEmployee")]
 		public string EmployeeNo { get; set; }
 
 		[StringLength(150, MinimumLength = 3, ErrorMessage = "Độ dài từ 3 --> 150 kí tự")]
@@ -25,6 +27,7 @@ namespace Lab04.Models
 
 
 		[DataType(DataType.Date)]
+		[BirthDateCheck]
 		public DateTime BirthDate { get; set; }
 
 		public bool Gender { get; set; } = true;
