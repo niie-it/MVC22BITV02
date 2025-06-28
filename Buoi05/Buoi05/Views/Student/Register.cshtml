@@ -1,0 +1,51 @@
+﻿@model Buoi05.Models.Student
+
+@{
+	ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<hr />
+<div class="row">
+	<div class="col-md-12">
+		<form asp-action="Register">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="StudentId" class="control-label"></label>
+				<input asp-for="StudentId" class="form-control" />
+				<span asp-validation-for="StudentId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="StudentName" class="control-label"></label>
+				<input asp-for="StudentName" class="form-control" />
+				<span asp-validation-for="StudentName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Certificate" class="control-label"></label>
+				<select asp-for="Certificate" asp-items="@ViewBag.Cerfiticates" class="form-select">
+					<option>---Select value---</option>
+				</select>
+				<span asp-validation-for="Certificate" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Description" class="control-label"></label>
+				<textarea asp-for="Description" class="form-control"></textarea>
+				<span asp-validation-for="Description" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Image" class="control-label"></label>
+				<input type="file" asp-for="Image" class="form-control" />
+				<span asp-validation-for="Image" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
