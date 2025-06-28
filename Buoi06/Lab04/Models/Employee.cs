@@ -44,6 +44,7 @@ namespace Lab04.Models
 		public string? CreditCard { get; set; }
 
 		[MaxLength(255, ErrorMessage ="Tối đa 255 kí tự")]
+		[DataType(DataType.MultilineText)]
 		public string? Description { get; set; }
 	}
 }
