@@ -1,0 +1,23 @@
+﻿@model List<Lab07.Data.Supplier>
+@{
+	ViewData["Title"] = "Index";
+}
+<h1>Danh sách nhà cung cấp</h1>
+<form asp-action="Index">
+	<fieldset>
+		<legend>Tìm kiếm</legend>
+		<input name="TuKhoa" required placeholder="Nhập từ cần tìm" />
+		<button class="btn btn-success">Tìm</button>
+	</fieldset>
+</form>
+<table class="table table-bordered">
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>@item.Name</td>
+			<td>@item.Logo</td>
+			<td>@item.Email</td>
+			<td>@item.Phone</td>
+		</tr>
+	}
+</table>
