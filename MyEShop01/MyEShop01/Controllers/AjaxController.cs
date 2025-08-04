@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyEShop01.Entities;
 using MyEShop01.Models;
@@ -13,13 +14,16 @@ namespace MyEShop01.Controllers
 		{
 			_context = context;
 		}
+
 		[HttpGet]
+		[Authorize]
 		public IActionResult Search()
 		{
 			return View();
 		}
 
 		[HttpPost]
+		[Authorize]
 		public IActionResult Search(string keyword)
 		{
 			var data = _context.HangHoas
