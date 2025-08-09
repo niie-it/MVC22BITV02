@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MyEShop01.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>MY CART</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThanhTien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenHH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThanhTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenHH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
